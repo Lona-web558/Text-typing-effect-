@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Effect</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Custom CSS will go here */
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Typing Effect</h1>
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <p id="typing-text" class="display-4"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+    const text = "Welcome to the typing effect demo!";
+    const typingText = document.getElementById('typing-text');
+    let index = 0;
+
+    function typeText() {
+        if (index < text.length) {
+            typingText.innerHTML += text.charAt(index);
+            index++;
+            setTimeout(typeText, 100);
+        }
+    }
+
+    window.onload = typeText;
+</script>
+        
+</body>
+</html>
